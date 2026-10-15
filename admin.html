@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | VW Transporter Spares</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="admin">
+    <header class="topbar admin-topbar">
+      <div class="container topbar-inner">
+        <div class="brand-wrap">
+          <div class="brand-badge">VW</div>
+          <div>
+            <p class="eyebrow">Admin area</p>
+            <h1>VW Transporter Spares</h1>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Admin navigation">
+          <a href="index.html">Storefront</a>
+          <a href="legal.html">Legal pages</a>
+          <button id="logoutBtn" class="btn btn-secondary hidden">Log out</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="admin-page">
+      <div id="loginScreen" class="container auth-shell">
+        <form id="loginForm" class="auth-card">
+          <p class="eyebrow">Protected access</p>
+          <h2>Admin login</h2>
+
+          <label>
+            Email
+            <input type="email" id="adminEmail" placeholder="admin@yourbusiness.com" required />
+          </label>
+
+          <label>
+            Password
+            <input type="password" id="adminPassword" placeholder="••••••••" required />
+          </label>
+
+          <button type="submit" class="btn btn-primary full">Log in</button>
+
+          <p class="login-note">Demo credentials: admin@vwspares.com / admin123</p>
+        </form>
+      </div>
+
+      <div id="adminDashboard" class="container hidden dashboard-shell">
+        <section class="dashboard-section">
+          <div class="section-heading compact">
+            <p class="eyebrow">Dashboard</p>
+            <h3>Products</h3>
+          </div>
+
+          <form id="productForm" class="admin-form">
+            <input type="hidden" id="productId" />
+
+            <label>
+              Product name
+              <input id="productName" type="text" required />
+            </label>
+
+            <label>
+              Category
+              <select id="productCategory">
+                <option value="Engine & Cooling">Engine & Cooling</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Body & Trim">Body & Trim</option>
+                <option value="Suspension & Steering">Suspension & Steering</option>
+                <option value="Interior">Interior</option>
+                <option value="Brakes & Driveline">Brakes & Driveline</option>
+              </select>
+            </label>
+
+            <label>
+              Vehicle fitment
+              <select id="productVehicle" required>
+                <option value="T4">T4</option>
+                <option value="T5">T5</option>
+                <option value="T6">T6</option>
+                <option value="T6.1">T6.1</option>
+              </select>
+            </label>
+
+            <label>
+              Price (£)
+              <input id="productPrice" type="number" step="0.01" min="0" required />
+            </label>
+
+            <label>
+              Stock quantity
+              <input id="productStock" type="number" min="0" required />
+            </label>
+
+            <label>
+              Product image upload
+              <input id="productImage" type="file" accept="image/*" />
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save product</button>
+              <button type="button" id="resetProductForm" class="btn btn-secondary">Reset</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-heading compact">
+            <p class="eyebrow">Current stock</p>
+            <h3>Product list</h3>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Fitment</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-heading compact">
+            <p class="eyebrow">Customer messages</p>
+            <h3>Enquiries</h3>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Vehicle</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody id="enquiriesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-heading compact">
+            <p class="eyebrow">Orders</p>
+            <h3>Sales overview</h3>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Reference</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-heading compact">
+            <p class="eyebrow">Business details</p>
+            <h3>Website settings</h3>
+          </div>
+          <form id="configForm" class="admin-form compact-form">
+            <label>
+              Business name
+              <input id="configBusinessName" type="text" />
+            </label>
+            <label>
+              Email
+              <input id="configEmail" type="email" />
+            </label>
+            <label>
+              Phone
+              <input id="configPhone" type="tel" />
+            </label>
+            <label>
+              WhatsApp Number
+              <input id="configWhatsApp" type="tel" />
+            </label>
+            <label>
+              Facebook URL
+              <input id="configFacebook" type="url" />
+            </label>
+            <label>
+              Address
+              <input id="configAddress" type="text" />
+            </label>
+            <label>
+              Opening hours
+              <input id="configHours" type="text" />
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save settings</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="dashboard-section">
+          <div class="section-heading compact">
+            <p class="eyebrow">Editable policy pages</p>
+            <h3>Legal content</h3>
+          </div>
+
+          <div class="legal-editor-wrap">
+            <select id="legalPageSelect">
+              <option value="privacy">Privacy Policy</option>
+              <option value="terms">Terms & Conditions</option>
+              <option value="shipping">Delivery & Shipping</option>
+              <option value="returns">Returns & Refunds</option>
+              <option value="warranty">Warranty</option>
+              <option value="contact">Contact Us</option>
+              <option value="cookies">Cookie Policy</option>
+            </select>
+            <textarea id="legalPageEditor" rows="18"></textarea>
+            <div class="form-actions">
+              <button id="saveLegalPage" class="btn btn-primary">Save legal page</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

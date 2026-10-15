@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VW Transporter Spares</title>
+    <meta
+      name="description"
+      content="Professional VW Transporter spare parts website for T4, T5, T6 and T6.1 drivers. Buy quality parts, find fitment by vehicle and get support by phone or WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-wrap">
+          <div class="brand-badge">VW</div>
+          <div>
+            <p class="eyebrow">Transporter spares</p>
+            <h1 id="businessName">VW Transporter Spares</h1>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#catalog">Shop</a>
+          <a href="#why-us">Why us</a>
+          <a href="#contact">Contact</a>
+          <a href="legal.html">Policies</a>
+          <a href="admin.html" class="nav-admin">Admin</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <a id="phoneLink" class="icon-link" href="tel:+447447482927">Call</a>
+          <a id="whatsappLink" class="icon-link primary" href="https://wa.me/447447482927" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="tag">Trusted VW Transporter parts</span>
+            <h2>Quality spares for T4, T5, T6 and T6.1</h2>
+            <p>
+              Genuine fitment guidance, fast UK delivery and dependable parts for everyday repairs,
+              van upgrades and restoration work.
+            </p>
+            <div class="hero-actions">
+              <a href="#catalog" class="btn btn-primary">Shop parts</a>
+              <a id="facebookLink" href="https://www.facebook.com/share/1F7JLyW7Tc/" class="btn btn-secondary" target="_blank" rel="noreferrer">Facebook</a>
+            </div>
+            <ul class="hero-points">
+              <li>Vehicle fitment checked</li>
+              <li>GBP pricing only</li>
+              <li>Expert stock support</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="mini-stat">
+              <span class="mini-label">Popular fitments</span>
+              <strong>T4 / T5 / T6 / T6.1</strong>
+            </div>
+            <div class="mini-stat accent">
+              <span class="mini-label">Support</span>
+              <strong>Phone & WhatsApp</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-label">Shipping</span>
+              <strong>UK courier dispatch</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tools">
+        <div class="container tools-inner">
+          <label class="search-box">
+            <span>Search parts</span>
+            <input id="searchInput" type="search" placeholder="Search by part or vehicle" />
+          </label>
+
+          <label class="filter-box">
+            <span>Vehicle</span>
+            <select id="vehicleFilter">
+              <option value="all">All vehicles</option>
+              <option value="T4">VW Transporter T4</option>
+              <option value="T5">VW Transporter T5</option>
+              <option value="T6">VW Transporter T6</option>
+              <option value="T6.1">VW Transporter T6.1</option>
+            </select>
+          </label>
+
+          <label class="filter-box">
+            <span>Category</span>
+            <select id="categoryFilter">
+              <option value="all">All categories</option>
+              <option value="Engine & Cooling">Engine & Cooling</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Body & Trim">Body & Trim</option>
+              <option value="Suspension & Steering">Suspension & Steering</option>
+              <option value="Interior">Interior</option>
+              <option value="Brakes & Driveline">Brakes & Driveline</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section id="catalog" class="catalog-section">
+        <div class="container catalog-wrap">
+          <div class="catalog-column main">
+            <div class="catalog-header">
+              <div>
+                <p class="eyebrow">Parts catalogue</p>
+                <h3>Shop by van model</h3>
+              </div>
+              <span id="resultCount" class="result-badge">0 items</span>
+            </div>
+
+            <div id="productGrid" class="product-grid" aria-live="polite"></div>
+          </div>
+
+          <aside class="catalog-column sidebar">
+            <div class="cart-card">
+              <div class="cart-header">
+                <h4>Order basket</h4>
+                <span id="cartCount" class="cart-count">0</span>
+              </div>
+
+              <div id="cartItems" class="cart-items"></div>
+
+              <div class="cart-summary">
+                <div>
+                  <span>Subtotal</span>
+                  <strong id="cartTotal">£0.00</strong>
+                </div>
+                <button id="checkoutBtn" class="btn btn-primary full">Place order</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="why-us" class="features">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Why drivers choose us</p>
+            <h3>Reliable parts and service for your Transporter</h3>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">✔</div>
+              <h4>Fitment guidance</h4>
+              <p>Vehicle-specific part matching for T4, T5, T6 and T6.1 owners.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">🚚</div>
+              <h4>Fast dispatch</h4>
+              <p>UK shipping for stocked items with updates on lead times where needed.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h4>Support by WhatsApp</h4>
+              <p>Quick answers for stock availability, part compatibility and fitment questions.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">£</div>
+              <h4>Clear GBP pricing</h4>
+              <p>All pricing displayed in GBP and structured for straightforward ordering.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow">Need help?</p>
+            <h3>Tell us what you need</h3>
+            <p>
+              Ask about fitment, stock, delivery or a hard-to-find Transporter part. We’ll help you find the correct option.
+            </p>
+
+            <div class="contact-list">
+              <a id="phoneLinkDetailed" href="tel:+447447482927">📞 +44 7447 482927</a>
+              <a id="whatsappLinkDetailed" href="https://wa.me/447447482927" target="_blank" rel="noreferrer">💬 WhatsApp us</a>
+              <a id="facebookLinkDetailed" href="https://www.facebook.com/share/1F7JLyW7Tc/" target="_blank" rel="noreferrer">📘 Facebook</a>
+            </div>
+          </div>
+
+          <form id="enquiryForm" class="enquiry-form">
+            <label>
+              Full name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email address
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Vehicle model
+              <select name="vehicle">
+                <option value="T4">VW Transporter T4</option>
+                <option value="T5">VW Transporter T5</option>
+                <option value="T6">VW Transporter T6</option>
+                <option value="T6.1">VW Transporter T6.1</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Tell us what part you need" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary full">Send enquiry</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h4 id="businessNameFooter">VW Transporter Spares</h4>
+          <p>Professional VW parts support for Transporter owners.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="legal.html">Privacy Policy</a>
+          <a href="legal.html#terms">Terms</a>
+          <a href="legal.html#shipping">Shipping</a>
+          <a href="legal.html#returns">Returns</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
